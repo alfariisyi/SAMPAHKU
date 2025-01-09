@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     Future.delayed(Duration(seconds: 3), _autoScroll);
   }
 
-  // Fetch user data from Firestore
+ 
   void _getUserData() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Bagian atas dengan gambar auto-scroll
+            
             SizedBox(
               height: 250.0,
               child: PageView.builder(
@@ -82,14 +82,14 @@ class _HomePageState extends State<HomePage> {
                 itemCount: _imageCount,
                 itemBuilder: (context, index) {
                   return Image.asset(
-                    'images/images_$index.jpg', // Ganti dengan path gambar Anda
+                    'images/images_$index.jpg', 
                     fit: BoxFit.cover,
                   );
                 },
               ),
             ),
 
-            // Box nama pengguna dan saldo (Full width)
+           
             Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Display Full Name if available
+                   
                     Text(
                       _fullName ?? 'Nama Pengguna',
                       style: TextStyle(
@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            // 6 Menu (2 Rows, 3 Menus per Row)
+            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: GridView.count(
@@ -158,8 +158,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            // ListView untuk informasi daur ulang
-            // ListView untuk informasi daur ulang
+            
             Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 1.0, horizontal: 16.0),
@@ -172,25 +171,24 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-// Always display the placeholder image and message
+
             Center(
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 1.0, horizontal: 16.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment
-                      .center, // Menempatkan konten di tengah secara vertikal
+                      .center,
                   crossAxisAlignment: CrossAxisAlignment
-                      .center, // Menempatkan konten di tengah secara horizontal
+                      .center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.network(
-                      'images/nothing.png', // Path to the image displayed
-                      height: 150.0, // Set the height of the image
-                      width: 150.0, // Set the width of the image
-                      fit: BoxFit.cover, // Optionally adjust the image's fit
-                    ),
-                    SizedBox(height: 8), // Menambah jarak antar elemen
+                      'images/nothing.png', 
+                      height: 150.0, 
+                      width: 150.0, 
+                      fit: BoxFit.cover, 
+                    SizedBox(height: 8), 
                     Text(
                       'Informasi tidak ada',
                       style: TextStyle(fontSize: 16.0, color: Colors.grey),
@@ -241,7 +239,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Navigation functions for each menu item
+
   void _navigateToRecycle() {
     Navigator.push(
       context,
