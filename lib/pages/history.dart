@@ -30,7 +30,7 @@ class _HistoryPoinPageState extends State<HistoryPoinPage> {
 
   Future<void> _fetchHistoryPoin() async {
     try {
-      // Get the current logged-in user
+    
       User? currentUser = FirebaseAuth.instance.currentUser;
       if (currentUser == null) {
         setState(() {
@@ -42,7 +42,7 @@ class _HistoryPoinPageState extends State<HistoryPoinPage> {
 
       print('Fetching history poin for user: ${currentUser.uid}');
 
-      // Query Firestore for history_poin documents matching the logged-in user's ID
+
       QuerySnapshot historySnapshot = await FirebaseFirestore.instance
           .collection('history_poin')
           .where('userid',
@@ -60,7 +60,7 @@ class _HistoryPoinPageState extends State<HistoryPoinPage> {
                 : '-${data['jumlahpoin']}';
             return {
               'deskripsi': data['deskripsi'] ?? '-',
-              'jumlahpoin': poin, // Add the "+" or "-" prefix here
+              'jumlahpoin': poin, 
               'tanggal':
                   (data['tanggal'] as Timestamp?)?.toDate() ?? DateTime.now(),
             };
@@ -92,7 +92,7 @@ class _HistoryPoinPageState extends State<HistoryPoinPage> {
         leading: IconButton(
           icon: Text('<', style: TextStyle(color: Colors.white, fontSize: 24)),
           onPressed: () {
-            // Add your back navigation action here
+     
             Navigator.pop(context);
           },
         ),
@@ -111,13 +111,13 @@ class _HistoryPoinPageState extends State<HistoryPoinPage> {
                       .format(historyItem['tanggal']);
                   var poin = historyItem['jumlahpoin'];
 
-                  // Card Widget based on your description
+              
                   return Card(
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                    elevation: 5, // Adding shadow
+                    elevation: 5, 
                     shape: RoundedRectangleBorder(
                       borderRadius:
-                          BorderRadius.circular(15), // Rounded corners
+                          BorderRadius.circular(15), 
                     ),
                     color: Colors.white,
                     child: ListTile(
