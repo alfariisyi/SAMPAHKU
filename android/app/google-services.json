@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "450619226215",
+    "project_id": "sampah-cf336",
+    "storage_bucket": "sampah-cf336.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450619226215:android:06bbb6c95839adac6afcc2",
+        "android_client_info": {
+          "package_name": "com.example.papb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJhc-KDilGyNEPPh97Y_u884fZkxxsilk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
